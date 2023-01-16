@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="chrono">0</div>
+    <div id="boutons">
+        <button id="start">start</button>
+        <button id="stop">stop</button>
+    </div>
+
+    <style>
+        #chrono{
+            width:200px;
+            height:150px;
+            margin-left:auto;
+            margin-right:auto;
+            border-radius:50%;
+            background-color: orange;
+            font-size: 5em;
+            text-align: center;
+            padding-top: 50px;
+
+
+        }
+        #boutons{
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+
+
+    <script>
+        window.addEventListener("load",run,false)
+
+        function run(){
+            let timer;
+            let compteur=0;
+            let chrono = document.querySelector("#chrono");
+
+            let start= document.querySelector("#start")
+            start.addEventListener("click",debut,false)
+                
+
+
+            let stop=document.querySelector("#stop")
+            stop.addEventListener("click",fin,false)
+
+
+            function time(){
+                compteur++;
+                chrono.innerHTML=compteur;
+            }
+            function debut(){
+            timer= setInterval(time,1000)
+            }
+
+            function fin(){
+                clearInterval(timer); 
+            }
+        }
+
+        
+
+        //clearInterval(timer);
+
+    </script>
+
+    
+
+</body>
+</html>
